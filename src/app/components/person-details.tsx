@@ -5,8 +5,9 @@ import { notFound, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { animals, persons } from "../data/actors";
+import AnimalCard from "./animal-card";
 
-export default function UserDetails() {
+export default function PersonDetails() {
   const { id } = useParams();
   const currentPerson = persons.find((p) => p.id === Number(id));
 
@@ -41,13 +42,7 @@ export default function UserDetails() {
       ) : (
         <ul className="mt-2">
           {ownedAnimals.map((animal) => (
-            <li key={animal.id} className="card card-block bg-muted p-2 mb-2 rounded">
-              <h4>{animal.name} ({animal.species})</h4>
-              <p><strong>Race :</strong> {animal.breed}</p>
-              <p><strong>Couleur :</strong> {animal.color}</p>
-              <p><strong>Poids :</strong> {animal.weight} g</p>
-              <p><strong>Date de naissance :</strong> {animal.dateOfBirth}</p>
-            </li>
+            <AnimalCard animal={animal} key={animal.id} />
           ))}
         </ul>
       )}

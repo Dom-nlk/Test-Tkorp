@@ -11,7 +11,7 @@ export default function PersonList({}: Props) {
 
   return (
     <div className='w-full flex card-block'>
-        {persons.length === 0 && <h5>Il n`y a plus de contact</h5>}
+        {persons.length === 0 && <h5>Il n`y a plus de clients</h5>}
         {persons.map((person) => (
         <PersonCard person={person} key={person.id} />
       ))}
