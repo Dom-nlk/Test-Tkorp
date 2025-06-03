@@ -20,6 +20,7 @@
 
 .btn:hover {
   background-color: #1f3f89;
+  color: white;
 }
 
 /* Bouton pour supprimer*/
@@ -68,6 +69,7 @@
 
 .btn-link:hover {
   background-color: rgb(27, 83, 158);
+  color: white;
 }
 
 button:active,

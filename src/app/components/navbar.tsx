@@ -10,6 +10,7 @@ export default function Navbar({}: Props) {
         <Link href={"/"}>
             <Image src={"/tkorp_logo.png"} width={100} height={40} alt='logo'/>
         </Link>
+        <Link href={"/statistic"} className='btn'>Questions</Link>
     </header>
   )
 }

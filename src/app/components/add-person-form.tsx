@@ -8,21 +8,28 @@ export default function AddPersonForm() {
   const { persons, setPersons } = useContext(PersonContext);
   const router = useRouter();
 
-  const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Pour empêcher la page de se récharger.
-    const form = new FormData(e.currentTarget);
+const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault(); // Empêche le rechargement de la page.
+  const form = new FormData(e.currentTarget);
 
-    const newPerson = {
-      id: Math.floor(Math.random() * 1000),
-      firstName: form.get("firstName") as string,
-      lastName: form.get("lastName") as string,
-      email: form.get("email") as string,
-      phoneNumber: form.get("phoneNumber") as string,
-    };
+  // Génère un ID unique
+  let newId = 0;
+  do {
+    newId = Math.floor(Math.random() * 1000);
+  } while (persons.some((p) => p.id === newId));
 
-    setPersons([newPerson, ...persons]);
-    router.push("/persons"); // rediriger vers la liste
+  const newPerson = {
+    id: newId,
+    firstName: form.get("firstName") as string,
+    lastName: form.get("lastName") as string,
+    email: form.get("email") as string,
+    phoneNumber: form.get("phoneNumber") as string,
   };
+
+  setPersons([newPerson, ...persons]);
+  router.push("/persons"); // Redirige vers la liste
+};
+
 
   return (
     <form onSubmit={handleSubmitForm} className="form-container">

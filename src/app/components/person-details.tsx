@@ -36,7 +36,7 @@ export default function PersonDetails() {
         <strong>Numero Telephone : </strong> {currentPerson?.phoneNumber}
       </p>
 
-            <h3 className="mt-4">Animaux :</h3>
+      <h3>Animaux :</h3>
       {ownedAnimals.length === 0 ? (
         <p>Aucun animal trouvé pour cette personne.</p>
       ) : (
