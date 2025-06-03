@@ -27,7 +27,7 @@ Assurez-vous d'avoir Node.js installé sur votre machine.
 Clonez le dépôt :
 
 git clone https://github.com/Dom-nlk/Test-Tkorp.git
-cd tkorp-nextjs
+cd Test-Tkorp
 Installez les dépendances :
 
 npm install
